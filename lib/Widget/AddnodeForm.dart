@@ -27,14 +27,14 @@ String ? title,subtitle; //input
               title=value;
             },
             text: 'Title',maxlines: 1,),
-          SizedBox(height: 15,),
+          const SizedBox(height: 15,),
           Customtextfield(
             onsaved: (value){
               subtitle=value;
             },
 
             text: 'Content',maxlines: 5,),
-          SizedBox(height: 50,),
+          const SizedBox(height: 50,),
           Custombutton(
             ontap: (){
               if(formkey.currentState!.validate()){
