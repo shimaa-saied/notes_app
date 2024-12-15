@@ -1,7 +1,17 @@
-class Nodemodel{
+import 'package:hive/hive.dart';
+
+// equal import in use
+part 'NodeModel.g.dart';
+
+@HiveType(typeId: 0)//First object select type id
+class Nodemodel extends HiveObject{
+  @HiveField(0)// adapter
   final String title;
+  @HiveField(1)
   final String subtitle;
+  @HiveField(2)
   final String date;
+  @HiveField(3)
   final int color;
 
   Nodemodel( {
