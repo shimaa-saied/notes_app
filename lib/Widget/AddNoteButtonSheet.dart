@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'CustomButton.dart';
-import 'CustomTextField.dart';
+import 'AddnodeForm.dart';
+
 
 class Addnotebuttonsheet extends StatelessWidget {
   const Addnotebuttonsheet({super.key});
@@ -12,17 +12,7 @@ class Addnotebuttonsheet extends StatelessWidget {
       const Padding(
         padding:  EdgeInsets.symmetric(horizontal: 18.0,vertical:10),
         child: SingleChildScrollView(
-          child: Column(
-            children: [
-              SizedBox(height: 32,),
-              Customtextfield(text: 'Title',maxlines: 1,),
-              SizedBox(height: 15,),
-              Customtextfield(text: 'Content',maxlines: 5,),
-              SizedBox(height: 50,),
-              Custombutton(),
-          
-            ],
-          ),
+            child: Addnodeform()
         ),
       )
     ;
