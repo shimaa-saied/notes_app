@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'CustomButton.dart';
@@ -10,8 +9,8 @@ class Addnotebuttonsheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return
-      Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 18.0,vertical:10),
+      const Padding(
+        padding:  EdgeInsets.symmetric(horizontal: 18.0,vertical:10),
         child: SingleChildScrollView(
           child: Column(
             children: [

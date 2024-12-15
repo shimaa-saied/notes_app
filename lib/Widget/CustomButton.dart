@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Custombutton extends StatelessWidget {
@@ -10,9 +9,10 @@ class Custombutton extends StatelessWidget {
       decoration: BoxDecoration(
           color:Colors.white ,
           borderRadius: BorderRadius.circular(16)),
-      child: Center(child: Text('Add',style: TextStyle(color:Colors.black ),)),
-      height: 50,
-      width: MediaQuery.of (context).size.width,// take width of screen
+     height: 50,
+      width: MediaQuery.of (context).size.width,
+      child: const Center(child: Text('Add',style: TextStyle(color:Colors.black ),)),
+      // take width of screen
     );
   }
 }

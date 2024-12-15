@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 
 import 'CustomSearch.dart';
@@ -12,10 +12,10 @@ class Customappbar extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Row(
       children: [
-        Text(text,style: TextStyle(
+        Text(text,style: const TextStyle(
           fontSize: 30
         ),)
-        ,Spacer(flex: 1),
+        ,const Spacer(flex: 1),
         Customsearch(icon:icon),
       ],
     );

@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Customtextfield extends StatelessWidget {
@@ -15,7 +14,7 @@ final int maxlines;
         ),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(16),
-          borderSide: BorderSide(color: Colors.white),
+          borderSide: const BorderSide(color: Colors.white),
         ),
         hintText: text,
       ),
