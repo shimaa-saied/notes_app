@@ -7,8 +7,8 @@ import 'package:hive/hive.dart';
 import 'package:notes_app/Models/NodeModel.dart';
 part  'add_node_state.dart';
 
-class AddNodeCubit extends Cubit {
-  AddNodeCubit():super(AddNodeInitial());
+class AddnodeCubit extends Cubit <AddNodesState>{
+  AddnodeCubit():super(AddNodeInitial());
 
 
 
