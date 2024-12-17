@@ -16,11 +16,10 @@ class AddnodeCubit extends Cubit <AddNodesState>{
     emit (AddNodeLoading());
   try {
     var nodesbox =  Hive.box<Nodemodel>('nodes');
-    emit (AddNodeSuccess());
-
     await nodesbox.add(node);
+    emit (AddNodeSuccess());
   }  catch (e) {
-    AddNodeFailure(e.toString());
+    emit (AddNodeFailure(e.toString()));
 
   }
 

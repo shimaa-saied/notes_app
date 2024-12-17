@@ -24,7 +24,7 @@ class Customnodeitem extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               ListTile(
-                title: const Text('flutter tips',style: TextStyle(color: Colors.black,fontSize: 35),),
+                title: const Text('flutter tipp ',style: TextStyle(color: Colors.black,fontSize: 35),),
                 subtitle: const Text('build with shimaa saied',style: TextStyle(color: Colors.black,fontSize: 20)),
                 trailing: IconButton(onPressed: (){},
                     icon: const Icon(Icons.delete, size: 40,color: Colors.black,),),
