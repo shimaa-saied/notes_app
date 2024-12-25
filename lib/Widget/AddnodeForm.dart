@@ -39,20 +39,25 @@ String ? title,subtitle; //input
 
             text: 'Content',maxlines: 5,),
           const SizedBox(height: 50,),
-          Custombutton(
-            ontap: (){
-              if(formkey.currentState!.validate()){
-                formkey.currentState!.save();
 
-               var nodemodel = Nodemodel(title: title!, subtitle: subtitle!, date: DateTime.now().toString(), color: Colors.blue.value);
-                BlocProvider.of<AddnodeCubit>(context).addNode(nodemodel);
-              }else{
-                autovalidateMode=AutovalidateMode.always;
-                setState(() {
+          BlocBuilder<AddnodeCubit,AddNodesState>(
+             builder:(context,state){
 
-                });
-              }
-            },
+            return Custombutton(
+              isloading:  state is AddNodeLoading ? true : false  ,
+              ontap: (){
+                if(formkey.currentState!.validate()){
+                  formkey.currentState!.save();
+                 var nodemodel = Nodemodel(title: title!, subtitle: subtitle!, date: DateTime.now().toString(), color: Colors.blue.value);
+                  BlocProvider.of<AddnodeCubit>(context).addNode(nodemodel);
+                }else{
+                  autovalidateMode=AutovalidateMode.always;
+                  setState(() {
+            
+                  });
+                }
+              },
+            );}
           ),
       
         ],

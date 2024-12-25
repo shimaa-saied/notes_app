@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:notes_app/Cubit/add_node_cubit.dart';
 import 'AddnodeForm.dart';
 
@@ -12,9 +11,7 @@ class Addnotebuttonsheet extends StatelessWidget {
   Widget build(BuildContext context) {
     return
      BlocProvider(create: (context)=>AddnodeCubit(),// avalible all screens
-       child: Padding(
-          padding:  EdgeInsets.symmetric(horizontal: 18.0,vertical:10),
-          child:  BlocConsumer< AddnodeCubit ,AddNodesState>(
+       child:   BlocConsumer< AddnodeCubit ,AddNodesState>(
 
 
                    listener: ( context,  state) {
@@ -27,13 +24,17 @@ class Addnotebuttonsheet extends StatelessWidget {
 
                      }},
                          builder: (context,  state) {
-                          return ModalProgressHUD(
-                              inAsyncCall: state is AddNodeLoading ? true : false  ,
-                              child: SingleChildScrollView(child: Addnodeform()));
+                          return  AbsorbPointer(
+                            absorbing:state is AddNodeLoading ? true : false  ,
+                            child: Padding(
+                                  padding:  EdgeInsets.symmetric(horizontal: 18.0,vertical:10),
+                                  child: SingleChildScrollView(child: Addnodeform()),
+                                ),
+                          );
                           },
            ),
 
-       ),
+
      );
   }
 }
