@@ -1,5 +1,7 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:notes_app/Cubit/DisplayNode/display_node_cubit.dart';
 import 'package:notes_app/Models/NodeModel.dart';
 import 'package:notes_app/Views/EditNodeView.dart';
 
@@ -33,6 +35,7 @@ class Customnodeitem extends StatelessWidget {
                 trailing: IconButton(
                   onPressed: (){
                     note.delete();
+                    BlocProvider.of<displayCubit>(context).fetchallnodes();//rebuild ui so using state emit
                   },
                     icon:  Icon(Icons.delete, size: 40,color: Colors.black,),),
               ),

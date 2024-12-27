@@ -15,6 +15,7 @@ class displayCubit extends Cubit <diaplaynodeState>{
       var nodesBox =  Hive.box<Nodemodel>('nodes');
        notes =nodesBox.values.toList();
 
+  emit(diaplaynodeSuccess());
   }
 
 

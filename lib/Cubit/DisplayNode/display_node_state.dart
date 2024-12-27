@@ -5,3 +5,4 @@ abstract class diaplaynodeState{}
 
 
 class diaplaynodeInitial extends diaplaynodeState {}
+class diaplaynodeSuccess extends diaplaynodeState {}

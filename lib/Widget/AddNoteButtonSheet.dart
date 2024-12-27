@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_app/Cubit/AddNode/add_node_cubit.dart';
+import '../Cubit/DisplayNode/display_node_cubit.dart';
 import 'AddnodeForm.dart';
 
 
@@ -15,10 +16,10 @@ class Addnotebuttonsheet extends StatelessWidget {
 
 
                    listener: ( context,  state) {
-                     if(state is AddNodeFailure ){
-                       print('failied ${state.errormessage}');
+                     if(state is AddNodeFailure ){;
 
                      }if(state is AddNodeSuccess ){
+                       BlocProvider.of<displayCubit>(context).fetchallnodes();
                        Navigator.pop(context);
 
 
