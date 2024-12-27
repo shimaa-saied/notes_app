@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:intl/intl.dart';
 import 'package:notes_app/Cubit/AddNode/add_node_cubit.dart';
 import 'package:notes_app/Models/NodeModel.dart';
 
@@ -48,7 +49,12 @@ String ? title,subtitle; //input
               ontap: (){
                 if(formkey.currentState!.validate()){
                   formkey.currentState!.save();
-                 var nodemodel = Nodemodel(title: title!, subtitle: subtitle!, date: DateTime.now().toString(), color: Colors.blue.value);
+
+                var currentdate=DateTime.now();
+                var formattedcurrentdate = DateFormat.yMd().format(currentdate);
+                 var nodemodel = Nodemodel(title: title!, subtitle: subtitle!,
+                     date: formattedcurrentdate,
+                     color: Colors.blue.value);
                   BlocProvider.of<AddnodeCubit>(context).addNode(nodemodel);
                 }else{
                   autovalidateMode=AutovalidateMode.always;
