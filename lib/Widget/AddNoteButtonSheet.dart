@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:notes_app/Cubit/add_node_cubit.dart';
+import 'package:notes_app/Cubit/AddNode/add_node_cubit.dart';
 import 'AddnodeForm.dart';
 
 
@@ -27,7 +27,10 @@ class Addnotebuttonsheet extends StatelessWidget {
                           return  AbsorbPointer(
                             absorbing:state is AddNodeLoading ? true : false  ,
                             child: Padding(
-                                  padding:  EdgeInsets.symmetric(horizontal: 18.0,vertical:10),
+                                  padding:  EdgeInsets.only(
+                                      left: 18.0,
+                                      right:10,
+                                      bottom:MediaQuery.of(context).viewInsets.bottom),
                                   child: SingleChildScrollView(child: Addnodeform()),
                                 ),
                           );

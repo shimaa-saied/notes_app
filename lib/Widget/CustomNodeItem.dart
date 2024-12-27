@@ -1,9 +1,13 @@
 
 import 'package:flutter/material.dart';
+import 'package:notes_app/Models/NodeModel.dart';
 import 'package:notes_app/Views/EditNodeView.dart';
 
 class Customnodeitem extends StatelessWidget {
-  const Customnodeitem({super.key});
+  const Customnodeitem({super.key, required this.note});
+
+  final Nodemodel note;
+
 
   @override
   Widget build(BuildContext context) {
@@ -18,20 +22,20 @@ class Customnodeitem extends StatelessWidget {
         child: Container(
           padding: const EdgeInsets.symmetric(vertical: 35,horizontal: 8),
           decoration: BoxDecoration(
-              color: Colors.amberAccent,
+              color:Color(note.color),
               borderRadius: BorderRadius.circular(16)),
           child:  Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               ListTile(
-                title: const Text('flutter tipp ',style: TextStyle(color: Colors.black,fontSize: 35),),
-                subtitle: const Text('build with shimaa saied',style: TextStyle(color: Colors.black,fontSize: 20)),
+                title:  Text(note.title,style: TextStyle(color: Colors.black,fontSize: 35),),
+                subtitle:  Text(note.subtitle,style: TextStyle(color: Colors.black,fontSize: 20)),
                 trailing: IconButton(onPressed: (){},
-                    icon: const Icon(Icons.delete, size: 40,color: Colors.black,),),
+                    icon:  Icon(Icons.delete, size: 40,color: Colors.black,),),
               ),
-              const Padding(
+              Padding(
                 padding:  EdgeInsets.only(right: 18.0),
-                child: Text('May21 ,2025',style: TextStyle(color: Colors.black,fontSize: 15),),
+                child: Text(note.date,style: TextStyle(color: Colors.black,fontSize: 15),),
               ),
 
 

@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:notes_app/Cubit/add_node_cubit.dart';
+import 'package:notes_app/Cubit/AddNode/add_node_cubit.dart';
 import 'package:notes_app/Models/NodeModel.dart';
 
 import 'CustomButton.dart';
@@ -38,7 +38,7 @@ String ? title,subtitle; //input
             },
 
             text: 'Content',maxlines: 5,),
-          const SizedBox(height: 50,),
+          const SizedBox(height: 30,),
 
           BlocBuilder<AddnodeCubit,AddNodesState>(
              builder:(context,state){
@@ -59,6 +59,7 @@ String ? title,subtitle; //input
               },
             );}
           ),
+          const SizedBox(height: 15,),
       
         ],
       ),
