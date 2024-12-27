@@ -30,7 +30,10 @@ class Customnodeitem extends StatelessWidget {
               ListTile(
                 title:  Text(note.title,style: TextStyle(color: Colors.black,fontSize: 35),),
                 subtitle:  Text(note.subtitle,style: TextStyle(color: Colors.black,fontSize: 20)),
-                trailing: IconButton(onPressed: (){},
+                trailing: IconButton(
+                  onPressed: (){
+                    note.delete();
+                  },
                     icon:  Icon(Icons.delete, size: 40,color: Colors.black,),),
               ),
               Padding(
