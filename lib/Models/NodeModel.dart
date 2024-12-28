@@ -6,13 +6,13 @@ part 'NodeModel.g.dart';
 @HiveType(typeId: 0)//First object select type id
 class Nodemodel extends HiveObject{
   @HiveField(0)// adapter
-  final String title;
+   String title;
   @HiveField(1)
-  final String subtitle;
+   String subtitle;
   @HiveField(2)
   final String date;
   @HiveField(3)
-  final int color;
+   int color;
 
   Nodemodel( {
     required this.title,

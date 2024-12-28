@@ -16,7 +16,7 @@ class Customnodeitem extends StatelessWidget {
     return GestureDetector(
       onTap: (){
         Navigator.push(context, MaterialPageRoute(builder: (context){
-          return const Editnodeview();
+          return  Editnodeview(note:note);
         }));
       },
       child: Padding(
