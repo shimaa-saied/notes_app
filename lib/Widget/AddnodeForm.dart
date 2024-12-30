@@ -5,6 +5,7 @@ import 'package:intl/intl.dart';
 import 'package:notes_app/Cubit/AddNode/add_node_cubit.dart';
 import 'package:notes_app/Models/NodeModel.dart';
 
+import 'ColorList.dart';
 import 'CustomButton.dart';
 import 'CustomTextField.dart';
 
@@ -41,6 +42,9 @@ String ? title,subtitle; //input
             text: 'Content',maxlines: 5,),
           const SizedBox(height: 30,),
 
+           colorList(),
+          const SizedBox(height: 30,),
+
           BlocBuilder<AddnodeCubit,AddNodesState>(
              builder:(context,state){
 
@@ -72,3 +76,7 @@ String ? title,subtitle; //input
     );
   }
 }
+
+
+
+

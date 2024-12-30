@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_app/Cubit/DisplayNode/display_node_cubit.dart';
 import 'package:notes_app/Models/NodeModel.dart';
-
-
+import '../Widget/ColorEditList.dart';
 import '../Widget/CustomAppBar.dart';
 import '../Widget/CustomTextField.dart';
 
@@ -50,11 +49,15 @@ class _EditnodeviewState extends State<Editnodeview> {
                 content=value;
               },
               text: widget.note.subtitle,maxlines: 5,),
-
-
+            SizedBox(
+              height: 15,),
+            coloreditList(note: widget.note)
           ],
         ),
       ),
     );
   }
 }
+
+
+
