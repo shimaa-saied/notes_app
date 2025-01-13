@@ -5,4 +5,11 @@ abstract class diaplaynodeState{}
 
 
 class diaplaynodeInitial extends diaplaynodeState {}
-class diaplaynodeSuccess extends diaplaynodeState {}
+
+class EmptyState extends diaplaynodeState {}
+
+class diaplaynodeSuccess extends diaplaynodeState {
+  final List<Nodemodel> notes;
+  diaplaynodeSuccess(this.notes);
+
+}

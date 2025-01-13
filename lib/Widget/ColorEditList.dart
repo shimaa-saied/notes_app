@@ -24,20 +24,20 @@ class _coloreditListState extends State<coloreditList> {
   }
 
   List<Color> colorlist=[
-    Colors.white,
-    Colors.lime,
-    Colors.grey,
-    Colors.deepOrange,
-    Colors.purpleAccent,
-    Colors.tealAccent,
-    Colors.redAccent,
+    Color(0xffFEC5FF),
+    Color(0xffFDF3BF),
+    Color(0xff96F4F4),
+    Color(0xffFBBECF),
+    Color(0xffC5CBFF),
+    Color(0xffC4FFCA),
+
 
 
   ];
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 35*2,
+      height: 35*3,
       child: ListView.builder(
           scrollDirection: Axis.horizontal,
           itemCount: colorlist.length,

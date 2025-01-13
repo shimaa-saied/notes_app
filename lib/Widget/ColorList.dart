@@ -15,13 +15,13 @@ class _colorListState extends State<colorList> {
   int currentindex =0;
 
   List<Color> colorlist=[
-    Colors.white,
-    Colors.lime,
-    Colors.grey,
-    Colors.deepOrange,
-    Colors.purpleAccent,
-    Colors.tealAccent,
-    Colors.redAccent,
+    Color(0xffFEC5FF),
+    Color(0xffFDF3BF),
+    Color(0xff96F4F4),
+    Color(0xffFBBECF),
+    Color(0xffC5CBFF),
+    Color(0xffC4FFCA),
+
 
 
   ];
@@ -60,7 +60,7 @@ class coloritem extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(right: 8.0),
       child: isActive ?          CircleAvatar(
-        backgroundColor:  Colors.white,
+        backgroundColor:  Colors.blue,
         radius: 35,
         child:CircleAvatar(
           backgroundColor: color,

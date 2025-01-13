@@ -27,9 +27,10 @@ String ? title,subtitle; //input
       autovalidateMode: autovalidateMode,
       child:  Column(
         children: [
-         const  SizedBox(height: 32,),
+          const  SizedBox(height: 32,),
           Customtextfield(
             onsaved: (value){
+
               title=value;
             },
             text: 'Title',maxlines: 1,),
@@ -42,41 +43,37 @@ String ? title,subtitle; //input
             text: 'Content',maxlines: 5,),
           const SizedBox(height: 30,),
 
-           colorList(),
+          colorList(),
           const SizedBox(height: 30,),
 
           BlocBuilder<AddnodeCubit,AddNodesState>(
-             builder:(context,state){
+              builder:(context,state){
 
-            return Custombutton(
-              isloading:  state is AddNodeLoading ? true : false  ,
-              ontap: (){
-                if(formkey.currentState!.validate()){
-                  formkey.currentState!.save();
+                return Custombutton(
+                  isloading:  state is AddNodeLoading ? true : false  ,
+                  ontap: (){
+                    if(formkey.currentState!.validate()){
+                      formkey.currentState!.save();
 
-                var currentdate=DateTime.now();
-                var formattedcurrentdate = DateFormat.yMd().format(currentdate);
-                 var nodemodel = Nodemodel(title: title!, subtitle: subtitle!,
-                     date: formattedcurrentdate,
-                     color: Colors.blue.value);
-                  BlocProvider.of<AddnodeCubit>(context).addNode(nodemodel);
-                }else{
-                  autovalidateMode=AutovalidateMode.always;
-                  setState(() {
-            
-                  });
-                }
-              },
-            );}
+                      var currentdate=DateTime.now();
+                      var formattedcurrentdate = DateFormat.yMd().format(currentdate);
+                      var nodemodel = Nodemodel(title: title!, subtitle: subtitle!,
+                          date: formattedcurrentdate,
+                          color: Colors.blue.value);
+                      BlocProvider.of<AddnodeCubit>(context).addNode(nodemodel);
+                    }else{
+                      autovalidateMode=AutovalidateMode.always;
+                      setState(() {
+
+                      });
+                    }
+                  },
+                );}
           ),
           const SizedBox(height: 15,),
-      
         ],
       ),
     );
   }
 }
-
-
-
 

@@ -13,6 +13,25 @@ class Noteslistview extends StatelessWidget {
     return BlocBuilder <displayCubit,diaplaynodeState>(
       builder: (context,state){
 
+        final notes = BlocProvider.of<displayCubit>(context).notes;
+
+      if (notes == null || notes.isEmpty ) {
+        return  Padding(
+          padding: const EdgeInsets.only(top: 150.0),
+          child: Column(
+
+            children: [
+                Image.asset('assets/rafiki.png',height: 200,width: 400,),
+               Text(' Create your first note !',style: TextStyle(fontSize: 20),)
+              ],
+            ),
+        )   ;
+      }
+
+
+
+      else{
+
         List<Nodemodel> notes=BlocProvider.of<displayCubit>(context).notes!;
 
       return Expanded(
@@ -22,7 +41,9 @@ class Noteslistview extends StatelessWidget {
             itemBuilder: (context,index){
          return  Customnodeitem(note: notes[index]) ;
         }),
-      );}
+      );};
+
+      }
     );
-  }
-}
+  }}
+

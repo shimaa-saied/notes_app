@@ -5,6 +5,7 @@
 import 'dart:ui';
 
 import 'package:bloc/bloc.dart';
+import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 import 'package:notes_app/Models/NodeModel.dart';
 part  'add_node_state.dart';
@@ -13,7 +14,7 @@ class AddnodeCubit extends Cubit <AddNodesState>{
   AddnodeCubit():super(AddNodeInitial());
 
 
-Color  color= Color(0xffffffff);
+Color  color= Color(0xffFEC5FF);
   addNode(Nodemodel node ) async {
     node.color=color.value;
     emit (AddNodeLoading());
@@ -24,9 +25,4 @@ Color  color= Color(0xffffffff);
   }  catch (e) {
     emit (AddNodeFailure(e.toString()));
 
-  }
-
-  }
-
-
-}
+  }}}

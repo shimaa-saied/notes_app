@@ -5,6 +5,7 @@ import 'package:hive_flutter/adapters.dart';
 import 'package:notes_app/SimpleBlocObserver.dart';
 import 'Cubit/DisplayNode/display_node_cubit.dart';
 import 'Models/NodeModel.dart';
+import 'Views/HomeView.dart';
 import 'Views/NotesView.dart';
 
 void main() async{
@@ -27,7 +28,7 @@ class NotesApp extends StatelessWidget {
     child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData.dark(),
-        home: const Notesview() ,
+        home: const Homeview() ,
     ),);
 
   }

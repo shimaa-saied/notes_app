@@ -12,8 +12,7 @@ class Addnotebuttonsheet extends StatelessWidget {
   Widget build(BuildContext context) {
     return
      BlocProvider(create: (context)=>AddnodeCubit(),// avalible all screens
-       child:   BlocConsumer< AddnodeCubit ,AddNodesState>(
-
+       child:BlocConsumer< AddnodeCubit ,AddNodesState>(
 
                    listener: ( context,  state) {
                      if(state is AddNodeFailure ){;

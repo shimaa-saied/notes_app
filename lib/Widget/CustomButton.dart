@@ -10,7 +10,7 @@ final bool isloading;
       onTap: ontap,
       child: Container(
         decoration: BoxDecoration(
-            color:Colors.white ,
+            color:Colors.grey[200],
             borderRadius: BorderRadius.circular(16)),
        height: 50,
         width: MediaQuery.of (context).size.width,
@@ -23,7 +23,7 @@ final bool isloading;
               ),
             ):
             Text('Add',style: TextStyle(
-            color:Colors.black ),)),
+            color:Colors.black,fontSize: 20 ),)),
         // take width of screen
       ),
     );
